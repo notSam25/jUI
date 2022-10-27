@@ -20,7 +20,7 @@ public class Window extends JFrame {
         public void paintComponent(Graphics g) {
             super.paintComponent(g);
 
-            for(UIObject object : getRenderQueue()) {
+            for (UIObject object : getRenderQueue()) {
                 object.render(g);
             }
             g.dispose();
@@ -54,17 +54,18 @@ public class Window extends JFrame {
         this.pack();
         this.setVisible(true);
         this.addMouseListener(MouseListener.getListener());
-
-        this.m_Panel.addToRenderQueue(new Gauge(new Point(200, 200)));
-
-        while(true) {
+        Gauge tGauge = new Gauge(new Point(200, 200));
+        this.m_Panel.addToRenderQueue(tGauge);
+        tGauge.m_MaxValue = 240;
+        while (true) {
             MouseListener.update();
             this.repaint();
-            Point pos = MouseListener.getMouseWindowPosition();
-            System.out.println(pos != null ? pos : "null pos");
-            Thread.sleep(10);
+            if (tGauge.m_CurValue >= 240)
+                tGauge.m_CurValue = 0;
+            tGauge.m_CurValue++;
+            Thread.sleep(30);
         }
-        
+
     }
 
     private static final String m_WindowName = "javaUI";
