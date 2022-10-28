@@ -15,6 +15,7 @@ public class Gauge extends UIObject {
         this.m_Unit = unit;
         this.m_MaxValue = max;
     }
+
     public Gauge(Point pos, String unit, double max, int decimalCount) {
         super(pos);
         this.m_Unit = unit;
@@ -66,9 +67,9 @@ public class Gauge extends UIObject {
         // draw the middle
         g.fillOval((int) this.m_Position.getX() - 5, (int) this.m_Position.getY() - 5, 10, 10);
 
-        
         // draw the current value
-        g.drawString(Math.floor(this.m_CurValue * m_DecimalPlace) / m_DecimalPlace + this.m_Unit, (int)this.m_Position.getX() - 30, (int)(this.m_Position.getY() + m_GaugeWidth / 3));
+        g.drawString(Math.floor(this.m_CurValue * m_DecimalPlace) / m_DecimalPlace + this.m_Unit,
+                (int) this.m_Position.getX() - 30, (int) (this.m_Position.getY() + m_GaugeWidth / 3));
     }
 
     public void setValue(double val) {
@@ -105,5 +106,6 @@ public class Gauge extends UIObject {
 
     private String m_Unit;
     private double m_CurValue, m_MaxValue;
-    private int m_GaugeWidth = 250, m_DecimalCount = 1, m_DecimalPlace = Integer.parseInt("1" + "0".repeat(m_DecimalCount));
+    private int m_GaugeWidth = 250, m_DecimalCount = 1,
+            m_DecimalPlace = Integer.parseInt("1" + "0".repeat(m_DecimalCount));
 }

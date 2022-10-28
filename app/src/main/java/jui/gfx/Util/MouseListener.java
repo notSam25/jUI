@@ -8,11 +8,12 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class MouseListener {
-    public enum  MouseButton {
+    public enum MouseButton {
         MOUSE_LEFT,
         MOUSE_MIDDLE,
         MOUSE_RIGHT
     }
+
     public static final Button[] buttons = new Button[3];
 
     static {
@@ -22,14 +23,15 @@ public class MouseListener {
     }
 
     private static Point mousePosition;
+
     public static Point getMouseScreenPosition() {
         return mousePosition;
     }
 
     public static Point getMouseWindowPosition() {
         Point mousePos = mousePosition;
-        
-        if(mousePosition == null)
+
+        if (mousePosition == null)
             return null;
 
         SwingUtilities.convertPointFromScreen(mousePos, Global.getWindow());
