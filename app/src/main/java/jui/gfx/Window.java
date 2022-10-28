@@ -1,6 +1,5 @@
 package jui.gfx;
 
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Point;
@@ -56,6 +55,7 @@ public class Window extends JFrame {
         this.addMouseListener(MouseListener.getListener());
 
         int max = 2400;
+        this.m_Panel.removeFromRenderQueue(null);
         Gauge tGauge = new Gauge(new Point(200, 200), "mph", max, 0);
         this.m_Panel.addToRenderQueue(tGauge);
 
@@ -67,6 +67,7 @@ public class Window extends JFrame {
             tGauge.setValue(tGauge.getCurrentValue() + 1);
             Thread.sleep(10);
         }
+
 
     }
 
