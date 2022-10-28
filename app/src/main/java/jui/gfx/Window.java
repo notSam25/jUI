@@ -55,8 +55,8 @@ public class Window extends JFrame {
         this.setVisible(true);
         this.addMouseListener(MouseListener.getListener());
 
-        int max = 1000;
-        Gauge tGauge = new Gauge(new Point(200, 200), "mph", max, 2);
+        int max = 2400;
+        Gauge tGauge = new Gauge(new Point(200, 200), "mph", max, 0);
         this.m_Panel.addToRenderQueue(tGauge);
 
         while (true) {

@@ -59,8 +59,8 @@ public class Gauge extends UIObject {
             int curNum = (int) (i * (this.m_MaxValue / 9));
             angle = ((2.0 * Math.PI - Math.PI / 2.0) / 9.0) * i + ((3.0 * Math.PI) / 4.0);
 
-            x = ((m_GaugeWidth / 2.5) * Math.cos(angle)) + this.m_Position.getX();
-            y = ((m_GaugeWidth / 2.5) * Math.sin(angle)) + this.m_Position.getY();
+            x = ((m_GaugeWidth / 2.7) * Math.cos(angle)) + this.m_Position.getX();
+            y = ((m_GaugeWidth / 2.7) * Math.sin(angle)) + this.m_Position.getY();
             g.drawString("" + curNum, (int) x - 10, (int) y);
         }
 
