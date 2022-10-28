@@ -1,5 +1,5 @@
 # jUI
-> A repo the aims to add onto the Java Graphics library.
+> A repo that aims to add onto the Java Graphics library.
 
 # Compiling
 
